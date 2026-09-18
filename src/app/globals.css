@@ -24,6 +24,23 @@ body {
   font-family: var(--font);
   overflow-x: hidden;
 }
+
+/* Replays whenever a section enters the viewport from either scroll direction. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(46px);
+  filter: blur(4px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -1019,6 +1036,7 @@ footer {
   background: #0c110f;
   color: #fff;
   padding: 96px 0 30px;
+  overflow: hidden;
 }
 .footer-main {
   display: flex;
@@ -1439,5 +1457,10 @@ footer {
   }
   * {
     transition-duration: 0.01ms !important;
+  }
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }

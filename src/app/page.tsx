@@ -7,11 +7,13 @@ import { Hero } from "@/components/hero";
 import { Process } from "@/components/process";
 import { Projects } from "@/components/projects";
 import { Services } from "@/components/services";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { WhyLaztar } from "@/components/why-laztar";
 
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <Header />
       <main>
         <Hero />
